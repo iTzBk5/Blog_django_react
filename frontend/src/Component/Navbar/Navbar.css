@@ -1,0 +1,74 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background: black;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* Initially hidden, GSAP will handle visibility */
+    transform: translateY(-20px);
+  }
+  
+  .navbar-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .navbar-logo span {
+    color: gold;
+  }
+  
+  .navbar-categories {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-categories li {
+    cursor: pointer;
+  }
+  
+  .navbar-search-bar {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  .navbar-search-button {
+    padding: 0.5rem 1rem;
+    background-color: gold;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navbar-auth-button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navbar-signin-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .navbar-signup-button {
+    background-color: white;
+    color: black;
+    border: none;
+  }
+  
