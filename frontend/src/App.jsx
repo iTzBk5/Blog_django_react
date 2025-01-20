@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AnimatedText from './Component/AnimatedText/AnimatedText';
 import Navbar from './Component/Navbar/Navbar';
+import AnimatedPath from './Component/AnimatedPath/AnimatedPath';
+import './App.css';
 
 function App() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -12,7 +14,6 @@ function App() {
   };
 
   useEffect(() => {
-
     window.addEventListener('scroll', handleScroll);
 
     axios
@@ -24,28 +25,22 @@ function App() {
         console.error('Error fetching data:', error);
       });
 
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <div>
-      {/* Animated Text */}
+    <div className="app">
+      <AnimatedPath />
       <AnimatedText isVisible={!isNavbarVisible} />
-
-      {/* Navbar */}
       <Navbar isVisible={isNavbarVisible} />
-
-      {/* Content for scrolling */}
-      <div style={{ height: '200vh', background: 'linear-gradient(to bottom, white, lightgray)' }}>
-        <p style={{ marginTop: '100vh', textAlign: 'center', fontSize: '1.5rem' }}>
-          Scroll down to see the magic!
-        </p>
+      <div className="content">
+        <p>Scroll down to see the magic!</p>
       </div>
     </div>
   );
 }
 
 export default App;
+
